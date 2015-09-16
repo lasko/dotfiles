@@ -1,0 +1,5 @@
+*-cache
+private.zsh
+history*
+.DS_Store
+zshrc.bak
