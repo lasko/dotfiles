@@ -1,2 +1,12 @@
 # dotfiles
-My dotfiles for vim and zsh
+
+Installation
+============
+
+```
+git clone https://github.com/lasko/dotfiles.git
+cd dotfiles/zsh
+make install
+cd ..
+cp -R vim ~/.vim
+```
