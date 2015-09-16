@@ -173,7 +173,7 @@ endfunction
 
 function! RunTestsInFile()
     if(&ft=='php')
-        :execute "!" . "/Users/lasko/pear/bin/phpunit -d memory_limit=512M -c /usr/local/twilio/src/php/tests/config.xml --bootstrap /usr/local/twilio/src/php/tests/bootstrap.php " . bufname('%') . ' \| grep -v Configuration \| egrep -v "^$" '
+        :execute "!" . "/Users/dblack/pear/bin/phpunit -d memory_limit=512M -c /usr/local/twilio/src/php/tests/config.xml --bootstrap /usr/local/twilio/src/php/tests/bootstrap.php " . bufname('%') . ' \| grep -v Configuration \| egrep -v "^$" '
     elseif(&ft=='go')
         exec ":!gp test"
     elseif(&ft=='python')
