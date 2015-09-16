@@ -9,4 +9,5 @@ cd dotfiles/zsh
 make install
 cd ..
 cp -R vim ~/.vim
+cp vimrc ~/.vimrc
 ```
