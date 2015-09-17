@@ -4,6 +4,8 @@ syntax enable           " enable syntax processing
 "colorscheme badwolf
 set background=dark
 colorscheme solarized
+"colorscheme dark
+set t_Co=256
 " }}}
 " Misc {{{
 set ttyfast                     " faster redraw
@@ -92,11 +94,43 @@ inoremap jk <esc>
 "python del powerline_setup
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#themes#malokai#palette = {}
+"set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
+"let g:airline_left_sep = ''
+"let g:airline_left_alt_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_right_alt_sep = ''
 set laststatus=2
+" air-line
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
 " }}}
 " CtrlP {{{
 let g:ctrlp_match_window = 'bottom,order:ttb'
@@ -244,5 +278,4 @@ function! EventTranslate()
     silent! g/^\w/t.|s/./=/g
 endfunction
 " }}}
-
 " vim:foldmethod=marker:foldlevel=0

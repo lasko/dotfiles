@@ -10,6 +10,12 @@ cp -R vim ~/.vim
 cp vimrc ~/.vimrc
 ```
 
+Linux
+=====
+```
+Inconsolatas Powerline Font.. Use it.
+```
+
 MacOSX
 ======
 
