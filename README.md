@@ -13,6 +13,13 @@ cp vimrc ~/.vimrc
 Linux
 =====
 ```
+cd gnome-terminal-colors-solarized/
+./install.sh
+
+cd ..
+cd fonts/
+./install.sh
+
 Inconsolatas Powerline Font.. Use it.
 ```
 
