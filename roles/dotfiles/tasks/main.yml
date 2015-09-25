@@ -1,0 +1,11 @@
+---
+- name: Git Repos
+  git: repo={{ item.repo }} dest={{ item.dest }}
+  with_items: dotfiles.lasko.git.repos
+  tags: dotfiles
+
+- name: copy dotfiles
+  copy: src={{ item }} dest={{lasko.home}}/.{{ item | basename }}
+  with_fileglob:
+    - ./*
+  tags: dotfiles

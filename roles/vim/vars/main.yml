@@ -1,0 +1,31 @@
+---
+vim:
+  home: "{{ lasko.home }}/.vim"
+
+pathogen:
+  repo: "https://github.com/tpope/vim-pathogen.git"
+  dest: "{{ lasko.home }}/.vim/autoload"
+
+ctrlp:
+  repo: "https://github.com/kien/ctrlp.vim.git"
+  dest: "{{ lasko.home }}/.vim/bundle/ctrlp.vim"
+
+nerdtree:
+  repo: "https://github.com/scrooloose/nerdtree.git"
+  dest: "{{ lasko.home }}/.vim/bundle/nerdtree.git"
+
+syntastic:
+  repo: "https://github.com/scrooloose/syntastic.git"
+  dest: "{{ lasko.home }}/.vim/bundle/syntastic.git"
+
+vimairline:
+  repo: "https://github.com/bling/vim-airline.git"
+  dest: "{{ lasko.home }}/.vim/bundle/vim-airline.git"
+
+solarized:
+  repo: "https://github.com/altercation/vim-colors-solarized.git"
+  dest: "{{ lasko.home }}/.vim/bundle/vim-colors-solarized.git"
+
+powerlinefonts:
+  repo: "https://github.com/powerline/fonts.git"
+  dest: "{{ lasko.home }}/.vim/fonts/fonts.git"

@@ -1,7 +1,17 @@
-update: 
-	git submodule foreach git pull
+check:
+	ansible-playbook -i  hosts site.yml --check --diff -c local
 
-install: install-externals 
+install:
+	ansible-playbook -i hosts site.yml -c local
 
-install-externals:
-	git submodule update --init
+dotfiles:
+	ansible-playbook -i hosts site.yml -c local --tags dotfiles
+
+vim:
+	ansible-playbook -i hosts site.yml -c local --tags vim
+
+facts:
+	ansible all -i hosts -m setup -c local
+
+clean-vim:
+	rm -rf ~/.vim ~/.vimrc

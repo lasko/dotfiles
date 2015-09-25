@@ -1,0 +1,9 @@
+# file: group_vars/dotfiles.yml
+---
+dotfiles:
+  lasko:
+    git:
+      repos:
+        - name: antigen
+          repo: "git://github.com/zsh-users/antigen.git"
+          dest: "{{ vwall.home }}/.antigen"
