@@ -35,6 +35,10 @@
   git: repo={{ vimairline.repo }} dest={{ vimairline.dest }}
   tags: vim
 
+- name: Add Vim-surround Repo
+  git: repo={{ vimsurround.repo }} dest={{ vimsurround.dest }}
+  tags: vim
+
 - name: Add Vim-Colors-Solarized Repo
   get_url: url=https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/colors/solarized.vim dest={{ lasko.home }}/.vim/colors validate_certs=no
   tags: vim
@@ -43,9 +47,13 @@
   git: repo={{ powerlinefonts.repo }} dest={{ powerlinefonts.dest }}
   tags: vim
 
-- name: execute font install
-  script: {{ lasko.home }}/.vim/fonts/install.sh
+- name: vim-Commentary Repo
+  git: repo={{ vimcommentary.repo }} dest={{ vimcommentary.dest }}
   tags: vim
+
+#- name: execute font install
+#  script: {{ lasko.home }}/.vim/fonts/install.sh
+#  tags: vim
 
 - name: copy vimrc file
   copy:

@@ -22,6 +22,14 @@ vimairline:
   repo: "https://github.com/bling/vim-airline.git"
   dest: "{{ lasko.home }}/.vim/bundle/vim-airline.git"
 
+vimsurround:
+  repo: "https://github.com/tpope/vim-surround.git"
+  dest: "{{ lasko.home }}/.vim/bundle/vim-surround.git"
+
+vimcommentary:
+  repo: "https://github.com/tpope/vim-commentary.git"
+  dest: "{{ lasko.home }}/.vim/bundle/vim-commentary.git"
+
 solarized:
   repo: "https://github.com/altercation/vim-colors-solarized.git"
   dest: "{{ lasko.home }}/.vim/bundle/vim-colors-solarized.git"
