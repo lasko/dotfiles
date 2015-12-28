@@ -15,3 +15,6 @@ facts:
 
 clean-vim:
 	rm -rf ~/.vim ~/.vimrc
+
+arch:
+	ansible-playbook -i hosts site.yml -c local --tags arch

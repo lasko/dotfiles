@@ -1,0 +1,74 @@
+
+ [options]
+  
+ scroll_on_output = false
+ scroll_on_keystroke = true
+ audible_bell = false
+ mouse_autohide = false
+ allow_bold = false
+ dynamic_title = true
+ urgent_on_bell = true
+ clickable_url = true
+ font =  Terminus 9
+ scrollback_lines = 1000
+ search_wrap = true
+ #icon_name = terminal
+ #geometry = 640x480
+  
+ # "system", "on" or "off"
+ cursor_blink = off
+  
+ # "block", "underline" or "ibeam"
+ cursor_shape = block
+  
+ # $BROWSER is used by default
+ browser = qutebrowser
+  
+ # set size hints for the window
+ #size_hints = false
+  
+ # emit escape sequences for other keys modified by Control
+ #modify_other_keys = false
+  
+ [colors]
+ cursor = #666666
+ foreground = #839496
+ foreground_bold = #839496
+ background = #121212
+  
+ # 20% background transparency (requires a compositor)
+ #background = rgba(63, 63, 63, 0.8)
+  
+ # if unset, will reverse foreground and background
+ highlight = #2f2f2f
+  
+ # colors from color0 to color254 can be set
+ color0 = #242424
+ color1 = #B14D4C
+ color2 = #438064
+ color3 = #82861D
+ color4 = #5F87Af
+ color5 = #754E80
+ color6 = #568081
+ color7 = #CCCCCC
+ color8 = #474747
+ color9 = #E7504E
+ color10 = #4EA272
+ color11 = #A6A84E
+ color12 = #597B9E
+ color13 = #8E6E9D
+ color14 = #2B6D6E
+ color15 = #9EACAE
+  
+ [hints]
+ #font = M9
+ #foreground = #dcdccc
+ #background = #3f3f3f
+ #active_foreground = #e68080
+ #active_background = #3f3f3f
+ padding = 2
+ #border = #3f3f3f
+ #border_width = 0.5
+ #roundness = 2.0
+  
+ # vim: ft=dosini cms=#%s

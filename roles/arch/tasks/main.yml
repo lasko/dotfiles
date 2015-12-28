@@ -1,0 +1,25 @@
+---
+ # Ensure our i3 directory exists
+- name: ensure target directory exists
+  file:
+    dest={{ i3.home }}
+    state=directory
+  tags: arch
+
+- name: "Install config directory for i3 for user lasko" 
+  file: path={{ item }} group=lasko owner=lasko state=directory
+  with_items:
+  - "{{ lasko.home }}/.i3"
+  - "{{ lasko.home }}/.config"
+  tags: arch
+
+- name: copy i3 config files
+  synchronize:
+    src={{item.src}}
+    dest={{item.dst}}
+  with_items:
+    - {src: config, dst: /home/{{lasko.home}}/.config}
+    - {src: i3, dst: /home/{{lasko.home}}/.i3}
+  tags: arch
+
+
