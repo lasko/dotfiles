@@ -1,0 +1,7 @@
+[user]
+	name = Brandon Height
+	email = lasko@nastyninja.net
+[core]
+	editor = vim
+[push]
+	default = simple

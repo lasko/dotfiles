@@ -1,0 +1,51 @@
+set -o vi
+
+# Obviously.
+EDITOR='vim'
+
+# git: running 'git diff' before checking in this change results in <C2><AC>
+# instead of the nbsp character, but running 'LANG=en_US.utf-8 git diff' shows
+# the correct output.
+LANG='en_US.utf-8'
+
+# https://golang.org/doc/code.html#GOPATH
+GOPATH="${HOME}/go"
+
+# Just override the stupid path and start in my dotfiles bin
+PATH+=:${HOME}/bin:
+
+# Homebrew et al.
+[ -d /usr/local/bin ] && PATH+=':/usr/local/bin'
+
+# system stuff
+PATH+=':/usr/bin:/bin:/usr/sbin:/sbin'
+
+# other stuff
+[ -d "$GOPATH/bin" ] && PATH+=":$GOPATH/bin"
+
+if [ -n "$VIRTUAL_ENV" ]; then
+  PATH=$VIRTUAL_ENV/bin:$PATH
+fi
+
+source ${HOME}/opt/awstoken/awstoken
+source ${HOME}/opt/assumerole/assumerole
+
+# PWSafe environment variable needed.
+PWSAFE_DATABASE=${HOME}/bin/pwsafe/pwsafe.dat
+
+PATH=${HOME}/bin/pwsafe:$PATH
+PATH=/usr/local/sbin:$PATH
+# are exported so that child processes (including other bash sessions) will
+# have access to them.
+export PATH EDITOR LANG PLATFORM RUBYLIB GOPATH VIRTUAL_ENV ANDROID_HOME DOTFILE_DIR PWSAFE_DATABASE 
+
+
+# Functions
+
+function _update_ps1() {
+    PS1="$(~/bin/powerline-shell.py $? 2> /dev/null)"
+}
+
+if [ "$TERM" != "linux" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
